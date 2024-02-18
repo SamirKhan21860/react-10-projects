@@ -1,21 +1,30 @@
 import { useState } from 'react';
 import './App.css';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 
 
 function App() {
   const [count, setCount] = useState(0);
 
-  let counter = 15;
+  // let counter = 15;
+
+  const addValue = () => {
+    console.log(count + 1);
+    setCount(count + 1);
+  }
+
+  const removeValue = () => {
+    console.log(count - 1);
+    setCount(count -1);
+    
+  }
 
   return (
     <>
       <h1>React course with hitesh</h1>
-      <h2>Counter value: {counter}</h2>
-      <button>Add value</button> {" "}
-      <button>Remove value</button>
-      <p>Footer: {counter}</p>
+      <h2>Counter value: {count}</h2>
+      <button onClick={addValue}>Add value</button> {" "}
+      <button onClick={removeValue}>Remove value</button>
+      <p>Footer: {count}</p>
     </>
   )
 }
