@@ -8,14 +8,14 @@ function App() {
   // let counter = 15;
 
   const addValue = () => {
-    console.log(count + 1);
+    // console.log(count + 1);
     setCount(count + 1);
   }
 
   const removeValue = () => {
-    console.log(count - 1);
+    // console.log(count - 1);
     setCount(count -1);
-    
+
   }
 
   return (
