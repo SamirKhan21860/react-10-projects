@@ -8,10 +8,7 @@ function App() {
 
   return (
     <>
-      <h1 className='bg-green-500 text-3xl'>A bg changer app with vite</h1>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <h1 className='bg-green-400 text-3xl p-3 rounded-md'>Vite with Tailwind</h1>
     </>
   )
 }
