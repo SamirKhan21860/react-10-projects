@@ -18,9 +18,9 @@ function App() {
     "#F23030",
     "#00E3CC",
     "#267365",
-    "#F29F05",
+    "#F2B544",
     "#FA7F08",
-    "#FFEC5C",
+    "#7E77A6",
   ];
 
   return (
@@ -40,8 +40,29 @@ function App() {
             >
               Blue
             </button>
-            <button onClick={() => setColor(arrColor[2])} className="outline-none px-4 py-1 rounded-full text-black shadow-lg">
+            <button
+              onClick={() => setColor(arrColor[2])}
+              className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+            >
               Green
+            </button>
+            <button
+              onClick={() => setColor(arrColor[3])}
+              className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+            >
+              Orange
+            </button>
+            <button
+              onClick={() => setColor(arrColor[4])}
+              className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+            >
+              Dull Orange
+            </button>
+            <button
+              onClick={() => setColor(arrColor[5])}
+              className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+            >
+              Bangun
             </button>
           </div>
         </div>
