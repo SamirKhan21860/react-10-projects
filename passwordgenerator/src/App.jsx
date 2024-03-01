@@ -43,7 +43,7 @@ function App() {
           <button onClick={copyPassToClipboard} className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">Copy</button>
         </div>
         <div className='flex text-sm gap-x-2'>
-          <input type="range" min={length} max={100} value={length} onChange={(e) => {setLength(e.target.value)
+          <input type="range" min={8} max={100} value={length} onChange={(e) => {setLength(e.target.value)
           console.log(e)}} name="" id="" className='cursor-pointer' />
           <label htmlFor="length">Length: {length}</label>
         </div>
