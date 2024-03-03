@@ -1,10 +1,11 @@
 // import React from 'react'
 import PInputBox from "./components/PInputBox";
+import currencyConverter from "../public/currencyConverter.jpg"
 
 const PApp = () => {
 
   const bgImage = {
-    backgroundImage: `url(https://img.freepik.com/free-photo/global-business-internet-network-connection-iot-internet-things-business-intelligence-concept-busines-global-network-futuristic-technology-background-ai-generative_1258-176795.jpg?w=1380&t=st=1709467409~exp=1709468009~hmac=be543c0fc4273f6beaab3888ff96f7a9c45d6a05da1dc51a1fb9a36ff708cc7d)`,
+    backgroundImage: `url(${currencyConverter})`,
   };
 
   const bgImageOptional = {
@@ -18,10 +19,18 @@ const PApp = () => {
   console.log(bgImageOptional)
   return (
     <>
-      <div className="w-full h-screen flex flex-wrap justify-center items-center bg-no-repeat" style={bgImage}>
+      <div
+        className="w-full h-screen bg-cover bg-center bg-yellow-300 flex flex-wrap justify-center items-center bg-no-repeat"
+        style={bgImage}
+      >
         <div className="w-full">
           <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-red-500/20">
-            <form onSubmit={(e) => {e.preventDefault()}} action="">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+              action=""
+            >
               <div className="w-full mb-1">
                 <PInputBox />
               </div>
@@ -33,7 +42,10 @@ const PApp = () => {
               <div className="w-full mb-1">
                 <PInputBox />
               </div>
-              <button type="submit" className="w-full font-bold bg-blue-600 text-white px-4 py-3 rounded-lg">
+              <button
+                type="submit"
+                className="w-full font-bold bg-blue-600 text-white px-4 py-3 rounded-lg"
+              >
                 Convert
               </button>
             </form>
@@ -41,7 +53,7 @@ const PApp = () => {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default PApp
