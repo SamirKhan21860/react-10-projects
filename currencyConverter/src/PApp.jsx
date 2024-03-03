@@ -1,4 +1,5 @@
 // import React from 'react'
+import PInputBox from "./components/PInputBox";
 
 const PApp = () => {
 
@@ -18,7 +19,26 @@ const PApp = () => {
   return (
     <>
       <div className="w-full h-screen flex flex-wrap justify-center items-center bg-no-repeat" style={bgImage}>
-
+        <div className="w-full">
+          <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-red-500/20">
+            <form onSubmit={(e) => {e.preventDefault()}} action="">
+              <div className="w-full mb-1">
+                <PInputBox />
+              </div>
+              <div className="relative w-full h-0.5">
+                <button className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 borer-white rounded-md bg-blue-600 text-white px-2 py-0.5 font-bold">
+                  Swap
+                </button>
+              </div>
+              <div className="w-full mb-1">
+                <PInputBox />
+              </div>
+              <button type="submit" className="w-full font-bold bg-blue-600 text-white px-4 py-3 rounded-lg">
+                Convert
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   )
