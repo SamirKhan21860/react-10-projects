@@ -19,7 +19,7 @@ const PApp = () => {
   const options = Object.keys(currencyInfo);
 
   const convert = () => {
-    setConvertedAmount(amount * useCurrencyInfo[to]);
+    setConvertedAmount(amount * currencyInfo[to]);
   };
 
   const swap = () => {
@@ -54,24 +54,38 @@ const PApp = () => {
               action=""
             >
               <div className="w-full mb-1">
-                <PInputBox label="from" amount={amount} currencyOptions={options} onCurrencyChange={(currency) => setTo(currency)} OnAmountChange={(amount) => setAmount(amount)} selectedCurrency={from}/>
+                <PInputBox
+                  label="from"
+                  amount={amount}
+                  currencyOptions={options}
+                  onCurrencyChange={(currency) => setFrom(currency)}
+                  OnAmountChange={(amount) => setAmount(amount)}
+                  selectedCurrency={from}
+                />
               </div>
               <div className="relative w-full h-0.5">
                 <button
                   onClick={swap}
-                  className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 borer-white rounded-md bg-blue-600 text-white px-2 py-0.5 font-bold"
+                  className="absolute z-10 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 borer-white rounded-md backdrop-blur-lg bg-orange-500/90 text-white px-2 py-0.5 font-bold"
                 >
                   Swap
                 </button>
               </div>
               <div className="w-full mb-1">
-                <PInputBox label="to" currencyOptions={options} amount={convertedAmount} onCurrencyChange={(currency) => setFrom(currency)} selectedCurrency={to} amountDisabled="true"/>
+                <PInputBox
+                  label="to"
+                  currencyOptions={options}
+                  amount={convertedAmount}
+                  onCurrencyChange={(currency) => setTo(currency)}
+                  selectedCurrency={to}
+                  amountDisabled
+                />
               </div>
               <button
                 type="submit"
-                className="w-full font-bold bg-blue-600 text-white px-4 py-3 rounded-lg"
+                className="w-full font-bold backdrop-blur-lg bg-orange-500/70 text-white px-4 py-3 rounded-lg"
               >
-                Convert {from.toUpperCase()} To {to.toUpperCase}
+                Convert {from.toUpperCase()} To {to.toUpperCase()}
               </button>
             </form>
           </div>
