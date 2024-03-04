@@ -1,12 +1,32 @@
 // import React from 'react'
 import PInputBox from "./components/PInputBox";
-import currencyConverter from "../public/currencyConverter.jpg"
-import './App.css'
+import currencyConverter from "/currencyConverter.jpg";
+import "./App.css";
+import { useState } from "react";
+import useCurrencyInfo from "./hooks/useCurrencyInfo";
 
 const PApp = () => {
+  const [amount, setAmount] = useState(0);
+  const [from, setFrom] = useState("usd");
+  const [to, setTo] = useState("pkr");
+  const [convertedAmount, setConvertedAmount] = useState(0);
 
   const bgImage = {
     backgroundImage: `url(${currencyConverter})`,
+  };
+
+  const currencyInfo = useCurrencyInfo(from);
+  const options = Object.keys(currencyInfo);
+
+  const convert = () => {
+    setConvertedAmount(amount * useCurrencyInfo[to]);
+  };
+
+  const swap = () => {
+    setTo(from);
+    setFrom(to);
+    setAmount(convertedAmount);
+    setConvertedAmount(amount);
   };
 
   // const bgImageOptional = {
@@ -29,6 +49,7 @@ const PApp = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+                convert();
               }}
               action=""
             >
@@ -47,7 +68,7 @@ const PApp = () => {
                 type="submit"
                 className="w-full font-bold bg-blue-600 text-white px-4 py-3 rounded-lg"
               >
-                Convert
+                Convert {from.toUpperCase()} To {to.toUpperCase}
               </button>
             </form>
           </div>
@@ -55,6 +76,6 @@ const PApp = () => {
       </div>
     </>
   );
-}
+};
 
-export default PApp
+export default PApp;

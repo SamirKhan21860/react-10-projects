@@ -11,7 +11,7 @@ function useCurrencyInfo(currency) {
         }
         fetchData(currency)
     }, [currency])
-
+    console.log(data)
     return data
 }
 
