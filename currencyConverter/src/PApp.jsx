@@ -54,15 +54,18 @@ const PApp = () => {
               action=""
             >
               <div className="w-full mb-1">
-                <PInputBox />
+                <PInputBox label="from" amount={amount} currencyOptions={options} onCurrencyChange={(currency) => setTo(currency)} OnAmountChange={(amount) => setAmount(amount)} selectedCurrency={from}/>
               </div>
               <div className="relative w-full h-0.5">
-                <button className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 borer-white rounded-md bg-blue-600 text-white px-2 py-0.5 font-bold">
+                <button
+                  onClick={swap}
+                  className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 borer-white rounded-md bg-blue-600 text-white px-2 py-0.5 font-bold"
+                >
                   Swap
                 </button>
               </div>
               <div className="w-full mb-1">
-                <PInputBox />
+                <PInputBox label="to" currencyOptions={options} amount={convertedAmount} onCurrencyChange={(currency) => setFrom(currency)} selectedCurrency={to} amountDisabled="true"/>
               </div>
               <button
                 type="submit"
