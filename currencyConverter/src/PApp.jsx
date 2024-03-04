@@ -1,11 +1,11 @@
 // import React from 'react'
-import PInputBox from "./components/PInputBox";
+import { PInputBox } from "./components/pIndex";
 import currencyConverter from "/currencyConverter.jpg";
 import "./App.css";
 import { useState } from "react";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 
-const PApp = () => {
+function PApp() {
   const [amount, setAmount] = useState(0);
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("pkr");
@@ -48,8 +48,8 @@ const PApp = () => {
           <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-red-500/20">
             <form
               onSubmit={(e) => {
-                e.preventDefault();
-                convert();
+                e.preventDefault()
+                convert()
               }}
               action=""
             >
@@ -59,8 +59,9 @@ const PApp = () => {
                   amount={amount}
                   currencyOptions={options}
                   onCurrencyChange={(currency) => setFrom(currency)}
-                  OnAmountChange={(amount) => setAmount(amount)}
+                  onAmountChange={(amount) => setAmount(amount)}
                   selectedCurrency={from}
+                  className="font-semibold"
                 />
               </div>
               <div className="relative w-full h-0.5">
@@ -93,6 +94,6 @@ const PApp = () => {
       </div>
     </>
   );
-};
+}
 
 export default PApp;

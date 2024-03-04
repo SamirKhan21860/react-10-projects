@@ -2,7 +2,7 @@
 
 import { useId } from "react";
 
-const PInputBox = ({
+function PInputBox({
   label,
   amount,
   onAmountChange,
@@ -12,7 +12,7 @@ const PInputBox = ({
   amountDisabled = false,
   currencyDisabled = false,
   className = "",
-}) => {
+}) {
   const id = useId();
   return (
     <div
