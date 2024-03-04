@@ -21,8 +21,8 @@ function App() {
   const swap = () => {
     setTo(from);
     setFrom(to);
-    setConvertedAmount(amount);
     setAmount(convertedAmount);
+    setConvertedAmount(amount);
   };
 
   const logo = {

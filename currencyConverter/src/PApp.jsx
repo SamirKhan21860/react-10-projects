@@ -25,8 +25,8 @@ function PApp() {
   const swap = () => {
     setTo(from);
     setFrom(to);
-    setConvertedAmount(amount);
     setAmount(convertedAmount);
+    setConvertedAmount(amount);
   };
 
   // const bgImageOptional = {
