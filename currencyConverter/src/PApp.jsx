@@ -61,13 +61,13 @@ function PApp() {
                   onCurrencyChange={(currency) => setFrom(currency)}
                   onAmountChange={(amount) => setAmount(amount)}
                   selectedCurrency={from}
-                  className="font-semibold"
+                  className="font-semibold mb-2"
                 />
               </div>
               <div className="relative w-full h-0.5">
                 <button
                   onClick={swap}
-                  className="absolute z-10 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 borer-white rounded-md backdrop-blur-lg bg-orange-500/90 text-white px-2 py-0.5 font-bold"
+                  className="absolute z-10 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 borer-white rounded-md backdrop-blur-lg bg-orange-500/90 text-white px-4 py-1.5 font-bold"
                 >
                   Swap
                 </button>
@@ -80,6 +80,7 @@ function PApp() {
                   onCurrencyChange={(currency) => setTo(currency)}
                   selectedCurrency={to}
                   amountDisabled
+                  className="mb-3"
                 />
               </div>
               <button
