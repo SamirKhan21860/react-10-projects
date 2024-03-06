@@ -73,7 +73,7 @@ const Header = () => {
                         : isPending
                           ? "text-gray-700"
                           : ""
-                      }`
+                      } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                     }
                   >
                     Contact
@@ -88,7 +88,7 @@ const Header = () => {
                         : isPending
                           ? "text-gray-700"
                           : ""
-                      }`
+                      } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                     }
                   >
                     GitHub
